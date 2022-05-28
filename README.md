@@ -19,9 +19,9 @@ Undefined
 Undefined
 
 ## Built With :bricks:
-- Kotlin/Java
-- Hibernate
-- Servlets
-- Maven
+- [Kotlin](https://kotlinlang.org/)
+- [Hibernate](https://hibernate.org/orm/documentation/6.0/)
+- [Servlets](https://jakarta.ee/specifications/servlet/5.0/)
+- [Maven](https://maven.apache.org/guides/index.html)
 
 
