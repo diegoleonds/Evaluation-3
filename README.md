@@ -1,16 +1,16 @@
-# Evaluation-3
+# Evaluation 3 :books:
 
 Kotlin web application
 
-## About this project
+## About this project :bulb:
 
 Undefined
 
-## User functionalities
+## User functionalities :robot:
 
 Undefined
 
-## Instructions
+## Instructions :gear:
 
 Undefined
 
@@ -18,7 +18,7 @@ Undefined
 
 Undefined
 
-## Built With
+## Built With :bricks:
 - Kotlin/Java
 - Hibernate
 - Servlets
