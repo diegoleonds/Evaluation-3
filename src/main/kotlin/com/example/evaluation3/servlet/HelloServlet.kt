@@ -1,4 +1,4 @@
-package com.example.evaluation3
+package com.example.evaluation3.servlet
 
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
