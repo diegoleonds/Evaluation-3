@@ -43,7 +43,9 @@ abstract class BaseDao<E : BaseEntity> : Dao<E> {
     }
 
     override fun update(entity: E) {
-
+        createTransaction {
+            manager.merge(entity)
+        }
     }
 
     override fun delete(entity: E) {
@@ -58,6 +60,6 @@ abstract class BaseDao<E : BaseEntity> : Dao<E> {
         transaction.commit()
     }
 
-    // doc ref https://kotlinlang.org/docs/extensions.html#extension-functions
+    // doc ref https://kotlinlang.org/docs/extensions.html
     protected fun EntityManager.createQueryForEntityClass(query: String): TypedQuery<E> = createQuery(query, getEntityClass())
 }
