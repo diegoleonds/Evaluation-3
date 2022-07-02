@@ -4,7 +4,7 @@ Kotlin web application
 
 ## About this project :bulb:
 
-Undefined
+Web application with CRUD operations
 
 ## User functionalities :robot:
 
@@ -12,7 +12,7 @@ Undefined
 
 ## Instructions :gear:
 
-Undefined
+Follow this to install and run this project
 
 ### Install Kotlin
 
