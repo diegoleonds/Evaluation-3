@@ -14,6 +14,12 @@ Undefined
 
 Undefined
 
+### Install Kotlin
+
+Depending on your IDE:
+
+- [Netbeans](https://github.com/JetBrains/kotlin-netbeans)
+
 ### Change db config
 
 Undefined
