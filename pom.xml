@@ -150,14 +150,14 @@
                     </compilerPlugins>
 
                     <pluginOptions>
-                        <option>no-arg:annotation=javax.persistence.Entity</option>
-                        <option>no-arg:annotation=javax.persistence.Embeddable</option>
-                        <option>no-arg:annotation=javax.persistence.MappedSuperclass</option>
+                        <option>no-arg:annotation=jakarta.persistence.Entity</option>
+                        <option>no-arg:annotation=jakarta.persistence.Embeddable</option>
+                        <option>no-arg:annotation=jakarta.persistence.MappedSuperclass</option>
                         <!-- Call instance initializers in the synthetic constructor -->
                         <!-- <option>no-arg:invokeInitializers=true</option> -->
-                        <option>all-open:annotation=javax.persistence.Entity</option>
-                        <option>all-open:annotation=javax.persistence.Embeddable</option>
-                        <option>all-open:annotation=javax.persistence.MappedSuperclass</option>
+                        <option>all-open:annotation=jakarta.persistence.Entity</option>
+                        <option>all-open:annotation=jakarta.persistence.Embeddable</option>
+                        <option>all-open:annotation=jakarta.persistence.MappedSuperclass</option>
                     </pluginOptions>
                 </configuration>
             </plugin>
