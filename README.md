@@ -12,7 +12,21 @@ Web application with CRUD operations
 
 ## User functionalities :robot:
 
-Undefined
+Login and CRUD operations as described bellow
+
+### CRUD operations:
+
+- Animals
+
+  - Create, read, update and delete
+  
+- Species and sub-species
+
+  - Create, read, update and delete
+  
+- Diet and movement
+
+  - Read
 
 ## Instructions :gear:
 
