@@ -1,22 +1,22 @@
-package com.example.evaluation3.data.dao
+package com.example.evaluation3.data.dao.base
 
-import com.example.evaluation3.data.model.BaseEntity
+import com.example.evaluation3.data.model.base.BaseEntity
 import jakarta.persistence.*
 import java.util.*
 
 abstract class BaseDao<E : BaseEntity> : Dao<E> {
 
-    protected val manager: EntityManager by lazy {
+    val manager: EntityManager by lazy {
         Persistence.createEntityManagerFactory("myDb").createEntityManager()
     }
 
-    protected val transaction: EntityTransaction by lazy {
+    val transaction: EntityTransaction by lazy {
         manager.transaction
     }
 
     abstract fun getEntityClass(): Class<E>
 
-    protected fun getEntityTableName(): String {
+    protected open fun getEntityTableName(): String {
         return getEntityClass().simpleName.replaceFirstChar {
             if (it.isLowerCase())
                 it.titlecase(Locale.getDefault())
@@ -54,12 +54,12 @@ abstract class BaseDao<E : BaseEntity> : Dao<E> {
         }
     }
 
-    protected fun createTransaction(action: () -> Unit) {
+    fun createTransaction(action: () -> Unit) {
         transaction.begin()
         action()
         transaction.commit()
     }
 
     // doc ref https://kotlinlang.org/docs/extensions.html
-    protected fun EntityManager.createQueryForEntityClass(query: String): TypedQuery<E> = createQuery(query, getEntityClass())
+    fun EntityManager.createQueryForEntityClass(query: String): TypedQuery<E> = createQuery(query, getEntityClass())
 }

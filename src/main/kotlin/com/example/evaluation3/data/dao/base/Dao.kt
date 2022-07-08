@@ -1,6 +1,6 @@
-package com.example.evaluation3.data.dao
+package com.example.evaluation3.data.dao.base
 
-import com.example.evaluation3.data.model.BaseEntity
+import com.example.evaluation3.data.model.base.BaseEntity
 
 interface Dao<E : BaseEntity> {
     fun insert(entity: E)
