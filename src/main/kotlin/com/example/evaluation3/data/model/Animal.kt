@@ -8,7 +8,7 @@ import jakarta.persistence.*
 class Animal(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    override val id: Long,
+    override val id: Long = 0,
 
     @Column(name = "name", nullable = false)
     val name: String,
