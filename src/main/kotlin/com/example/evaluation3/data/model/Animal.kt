@@ -13,7 +13,6 @@ class Animal(
     @Column(name = "name", nullable = false)
     val name: String,
 
-    @Column(name = "sub_specie")
     @ManyToOne
     val specie: SubSpecie
 ) : BaseEntity()

@@ -13,6 +13,11 @@ class Specie(
     @Column(name = "name", nullable = false)
     val name: String,
 
-    @ManyToMany(mappedBy = "")
-    val movements: Set<Movement> = HashSet()
+    @Column(name = "diet", nullable = false)
+    val diet: Diet,
+
+    @Column
+    @Enumerated
+    @ElementCollection
+    val movements: Set<Movement> = emptySet(),
 ) : BaseEntity()

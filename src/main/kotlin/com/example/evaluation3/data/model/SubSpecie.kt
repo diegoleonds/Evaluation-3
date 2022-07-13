@@ -13,7 +13,6 @@ class SubSpecie(
     @Column(name = "name", nullable = false)
     val name: String,
 
-    @Column(name = "specie")
     @ManyToOne
     val specie: Specie
 ) : BaseEntity()
