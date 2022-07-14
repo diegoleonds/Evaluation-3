@@ -1,7 +1,9 @@
 package com.example.evaluation3.data.config
 
 import com.example.evaluation3.data.config.DbConfig.shutdown
-import com.example.evaluation3.data.model.*
+import com.example.evaluation3.data.model.entities.Animal
+import com.example.evaluation3.data.model.entities.Specie
+import com.example.evaluation3.data.model.entities.SubSpecie
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -51,8 +53,8 @@ object DbConfig {
     }
 }
 
-private fun main() {
-    DbConfig.session.run {
+//private fun main() {
+//    DbConfig.session.run {
 //        beginTransaction()
 //        save(Specie(
 //            name = "Monkey",
@@ -60,13 +62,13 @@ private fun main() {
 //            movements = setOf(Movement.WALK)
 //        ))
 //        transaction.commit()
-
-        val monkey = find(Specie::class.java, 1L)
-
-        println(monkey.name)
-        println(monkey.diet.description)
-        println(monkey.movements)
-
-        shutdown()
-    }
-}
+//
+//        val monkey = find(Specie::class.java, 1L)
+//
+//        println(monkey.name)
+//        println(monkey.diet.description)
+//        println(monkey.movements)
+//
+//        shutdown()
+//    }
+//}

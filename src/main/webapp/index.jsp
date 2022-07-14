@@ -5,9 +5,15 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
+<h1>Main menu</h1>
+<form action="specie" method="get">
+    <br>
+    <button type="submit" name="register">Register Species</button>
+    <br>
+    <br>
+    <button type="submit" name="view">View Species</button>
+    <br>
+</form>
+
 </body>
 </html>

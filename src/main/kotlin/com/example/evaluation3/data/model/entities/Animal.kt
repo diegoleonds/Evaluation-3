@@ -1,4 +1,4 @@
-package com.example.evaluation3.data.model
+package com.example.evaluation3.data.model.entities
 
 import com.example.evaluation3.data.model.base.BaseEntity
 import jakarta.persistence.*
