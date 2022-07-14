@@ -4,7 +4,6 @@ import com.example.evaluation3.data.config.DbConfig
 import com.example.evaluation3.data.model.base.BaseEntity
 import jakarta.persistence.criteria.CriteriaQuery
 import org.hibernate.Session
-import org.hibernate.query.Query
 
 
 abstract class BaseDao<E : BaseEntity> : Dao<E> {
@@ -29,7 +28,7 @@ abstract class BaseDao<E : BaseEntity> : Dao<E> {
         val builder = session.criteriaBuilder
         val criteria: CriteriaQuery<E> = builder.createQuery(getEntityClass())
         criteria.from(getEntityClass())
-        return session.createQueryAndCloseSession(criteria).resultList
+        return session.createQuery(criteria).resultList
     }
 
     override fun update(entity: E) {
@@ -50,13 +49,6 @@ abstract class BaseDao<E : BaseEntity> : Dao<E> {
             beginTransaction()
             action()
             transaction.commit()
-            close()
         }
-    }
-
-    protected fun Session.createQueryAndCloseSession(criteria: CriteriaQuery<E>): Query<E> {
-        val query = createQuery(criteria)
-        close()
-        return query
     }
 }

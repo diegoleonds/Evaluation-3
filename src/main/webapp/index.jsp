@@ -11,7 +11,7 @@
     <button type="submit" name="register">Register Species</button>
     <br>
     <br>
-    <button type="submit" name="view">View Species</button>
+    <button type="submit" name="list">View Species</button>
     <br>
 </form>
 

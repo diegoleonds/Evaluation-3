@@ -1,4 +1,4 @@
-package com.example.evaluation3.control.base
+package com.example.evaluation3.control.servlet.base
 
 import jakarta.servlet.http.HttpServlet
 import jakarta.servlet.http.HttpServletRequest
