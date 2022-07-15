@@ -1,12 +1,11 @@
 package com.example.evaluation3.data.config
 
-import com.example.evaluation3.data.config.DbConfig.shutdown
 import com.example.evaluation3.data.model.entities.Animal
 import com.example.evaluation3.data.model.entities.Specie
 import com.example.evaluation3.data.model.entities.SubSpecie
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.Session
+import org.hibernate.SessionFactory
+import org.hibernate.cfg.Configuration
 
 object DbConfig {
     private const val dbName = "av2"

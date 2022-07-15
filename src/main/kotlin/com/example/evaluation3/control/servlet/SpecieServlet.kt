@@ -16,32 +16,5 @@ class SpecieServlet : CrudServlet<Specie>() {
     override val dao: Dao<Specie>
         get() = SpecieDao
 
-    override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
-        if (request.hasParameter(register)) {
-            servletContext.getRequestDispatcher("/registerSpecie.jsp").forward(request, response)
-        } else if (request.hasParameter(list)) {
-            request.setAttribute("entities", dao.getEntities())
-            servletContext.getRequestDispatcher("/listSpecies.jsp").forward(request, response)
-        }
-    }
-
-    override fun doPost(request: HttpServletRequest, response: HttpServletResponse) {
-        if (request.hasParameter(register)) {
-            dao.insert(transform.fromRequest(request))
-        } else if (request.hasParameter(delete)) {
-            request.getParameter("id")?.let {
-                dao.deleteBydId(it.toLong())
-            }
-        } else if (request.hasParameter(goToEdit)) {
-            request.getParameter("id")?.let {
-                request.setAttribute("entity", dao.getBydId(it.toLong()))
-                servletContext.getRequestDispatcher("/editSpecie.jsp").forward(request, response)
-            }
-        } else if (request.hasParameter(edit)) {
-            dao.update(transform.fromRequest(request))
-        }
-    }
-
-    override fun destroy() {
-    }
+    override val path = "species"
 }

@@ -66,6 +66,6 @@
         </tbody>
     </table>
 </form>
-<a href="index.jsp">Back to main section</a>
+<a href="../index.jsp">Back to main section</a>
 </body>
 </html>

@@ -43,6 +43,6 @@
     <br>
     <input type="submit" value="register" name="register">
 </form>
-<a href="index.jsp">Back to main section</a>
+<a href="../index.jsp">Back to main section</a>
 </body>
 </html>
