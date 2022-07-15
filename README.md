@@ -40,7 +40,13 @@ Depending on your IDE:
 
 ### Change db config
 
-Undefined
+You can go to **DbConfig class** and change the following values as you like to change db name, user and password respectively
+
+``` kotlin
+private const val dbName = "av2"
+private const val user = "root"
+private const val password = "gremio10"
+```
 
 ## Built With :bricks:
 - [Kotlin](https://kotlinlang.org/)
