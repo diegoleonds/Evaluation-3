@@ -52,23 +52,3 @@ object DbConfig {
         close()
     }
 }
-
-//private fun main() {
-//    DbConfig.session.run {
-//        beginTransaction()
-//        save(Specie(
-//            name = "Monkey",
-//            diet = Diet.HERBIVORE,
-//            movements = setOf(Movement.WALK)
-//        ))
-//        transaction.commit()
-//
-//        val monkey = find(Specie::class.java, 1L)
-//
-//        println(monkey.name)
-//        println(monkey.diet.description)
-//        println(monkey.movements)
-//
-//        shutdown()
-//    }
-//}

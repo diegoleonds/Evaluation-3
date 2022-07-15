@@ -8,4 +8,5 @@ interface Dao<E : BaseEntity> {
     fun getEntities(offset: Int = 0, page: Int = 0): List<E>
     fun update(entity: E)
     fun delete(entity: E)
+    fun deleteBydId(id: Long)
 }

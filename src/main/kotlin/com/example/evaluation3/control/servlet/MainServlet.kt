@@ -9,9 +9,7 @@ import jakarta.servlet.http.HttpServletResponse
 class MainServlet : BaseServlet() {
 
     override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
-        if (request.hasParameter("registerSpecie")) {
-            servletContext.getRequestDispatcher("/registerSpecie.jsp").forward(request, response)
-        }
+
     }
 
     override fun destroy() {

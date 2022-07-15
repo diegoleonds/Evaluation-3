@@ -10,50 +10,62 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Species:</title>
+    <title>Species</title>
 </head>
 <body>
 <%
-    ArrayList<Specie> species = (ArrayList<Specie>) request.getAttribute("species");
+    ArrayList<Specie> species = (ArrayList<Specie>) request.getAttribute("entities");
 %>
-<table>
-    <thead>
-    <tr>
-        <th colspan="1">id</th>
-        <th colspan="1">name</th>
-        <th colspan="1">diet</th>
-        <th colspan="1">movements</th>
-    </tr>
-    </thead>
-    <tbody>
-    <%
-        for (Specie specie : species) {
-    %>
-    <tr>
-        <td><%=specie.getId()%>
-        </td>
-        <td><%=specie.getName()%>
-        </td>
-        <td><%=specie.getDiet().getDescription()%>
-        </td>
-        <td>
-            <ul>
-                <%
-                    for (Movement movement : specie.getMovements()) {
-                %>
-                <li><%=movement.getDescription()%>
-                </li>
-                <%
-                    }
-                %>
-            </ul>
-        </td>
-    </tr>
-    <%
-        }
-    %>
-    </tbody>
-</table>
+<form action="specie" method="post">
+    <table>
+        <thead>
+        <tr>
+            <th colspan="1">id</th>
+            <th colspan="1">name</th>
+            <th colspan="1">diet</th>
+            <th colspan="1">movements</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%
+            for (Specie specie : species) {
+        %>
+        <tr>
+            <td>
+                <div><%=specie.getId()%></div>
+                <input type="text" name="id" hidden="hidden" value="<%=specie.getId()%>">
+            </td>
+            <td>
+                <%=specie.getName()%>
+            </td>
+            <td>
+                <%=specie.getDiet().getDescription()%>
+            </td>
+            <td>
+                <ul>
+                    <%
+                        for (Movement movement : specie.getMovements()) {
+                    %>
+                    <li><%=movement.getDescription()%>
+                    </li>
+                    <%
+                        }
+                    %>
+                </ul>
+            </td>
+            <td>
+                <button type="submit" name="goToEdit" value="goToEdit"><img src="ic_edit.svg"></button>
+            </td>
+            <td>
+                <button type="submit" name="delete" value="delete"><img src="ic_delete.svg"></button>
+            </td>
+        </tr>
+        <%
+            }
+        %>
+        </tbody>
+    </table>
+</form>
 <a href="index.jsp">Back to main section</a>
 </body>
 </html>

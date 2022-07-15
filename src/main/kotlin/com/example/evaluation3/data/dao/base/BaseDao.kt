@@ -33,13 +33,19 @@ abstract class BaseDao<E : BaseEntity> : Dao<E> {
 
     override fun update(entity: E) {
         createTransaction {
-            update(entity)
+            merge(entity)
         }
     }
 
     override fun delete(entity: E) {
         createTransaction {
             delete(entity)
+        }
+    }
+
+    override fun deleteBydId(id: Long) {
+        getBydId(id)?.let {
+            delete(it)
         }
     }
 

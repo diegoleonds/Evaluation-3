@@ -7,16 +7,16 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "specie")
-class Specie(
+data class Specie(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     override val id: Long = 0,
 
     @Column(name = "name", nullable = false)
-    val name: String,
+    var name: String,
 
     @Column(name = "diet", nullable = false)
-    val diet: Diet,
+    var diet: Diet,
 
     @Column
     @Enumerated
