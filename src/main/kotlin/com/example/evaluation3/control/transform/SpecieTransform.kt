@@ -10,7 +10,7 @@ class SpecieTransform : Transform<Specie> {
 
     override fun fromRequest(request: HttpServletRequest): Specie {
         return Specie(
-            id = request.getParameter("id")?.toLong() ?: 0,
+            id = request.getIdParameter(),
             name = request.getParameter("name"),
             diet = Diet.findByName(request.getParameter("diet")),
             movements = request.getParameterValues("movements").let { parameters ->
