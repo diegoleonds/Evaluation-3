@@ -6,14 +6,21 @@
 </head>
 <body>
 <h1>Main menu</h1>
+<br>
+<h2>Species:</h2>
 <form action="specie" method="get">
+    <button type="submit" name="register">Register</button>
     <br>
-    <button type="submit" name="register">Register Species</button>
-    <br>
-    <br>
-    <button type="submit" name="list">View Species</button>
+    <button type="submit" name="list">List</button>
     <br>
 </form>
-
+<br>
+<h2>Sub-species:</h2>
+<form action="subspecies" method="get">
+    <button type="submit" name="register">Register</button>
+    <br>
+    <button type="submit" name="list">List</button>
+    <br>
+</form>
 </body>
 </html>

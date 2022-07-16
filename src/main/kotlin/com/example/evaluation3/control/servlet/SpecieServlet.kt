@@ -12,9 +12,7 @@ import jakarta.servlet.http.HttpServletResponse
 
 @WebServlet(name = "specie", value = ["/specie"])
 class SpecieServlet : CrudServlet<Specie>() {
-    override val transform: Transform<Specie> = SpecieTransform()
-    override val dao: Dao<Specie>
-        get() = SpecieDao
-
+    override val transform = SpecieTransform()
+    override val dao = SpecieDao
     override val path = "species"
 }

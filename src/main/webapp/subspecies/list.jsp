@@ -1,7 +1,8 @@
 <%@ page import="com.example.evaluation3.data.model.entities.Specie" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.example.evaluation3.data.model.enums.Movement" %>
-<%@ page import="com.example.evaluation3.control.servlet.base.CrudServlet" %><%--
+<%@ page import="com.example.evaluation3.control.servlet.base.CrudServlet" %>
+<%@ page import="com.example.evaluation3.data.model.entities.SubSpecie" %><%--
   Created by IntelliJ IDEA.
   User: diegosantos
   Date: 14/07/22
@@ -11,49 +12,36 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Species</title>
+    <title>Subspecies</title>
 </head>
 <body>
 <%
-    ArrayList<Specie> species = (ArrayList<Specie>) request.getAttribute("entities");
+    ArrayList<SubSpecie> entities = (ArrayList<SubSpecie>) request.getAttribute("entities");
 %>
 <table>
     <thead>
     <tr>
         <th colspan="1">id</th>
         <th colspan="1">name</th>
-        <th colspan="1">diet</th>
-        <th colspan="1">movements</th>
+        <th colspan="1">specie</th>
     </tr>
     </thead>
     <tbody>
     <%
-        for (Specie specie : species) {
+        for (SubSpecie entity : entities) {
     %>
     <tr>
-        <form action="specie" method="post">
+        <form action="subspecies" method="post">
             <td>
-                <div><%=specie.getId()%>
+                <div><%=entity.getId()%>
                 </div>
-                <input type="text" name="id" hidden="hidden" value="<%=specie.getId()%>">
+                <input type="text" name="id" hidden="hidden" value="<%=entity.getId()%>">
             </td>
             <td>
-                <%=specie.getName()%>
+                <%=entity.getName()%>
             </td>
             <td>
-                <%=specie.getDiet().getDescription()%>
-            </td>
-            <td>
-                <ul>
-                    <%
-                        for (Movement movement : specie.getMovements()) {
-                    %>
-                    <li><%=movement.getDescription()%>
-                    </li>
-                    <%
-                        }
-                    %>
-                </ul>
+                <%=entity.getSpecie().getName()%>
             </td>
             <td>
                 <button type="submit" name="goToEdit" value="<%=CrudServlet.goToEdit%>"><img src="ic_edit.svg"></button>

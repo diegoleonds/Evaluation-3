@@ -1,6 +1,7 @@
 <%@ page import="com.example.evaluation3.data.model.enums.Diet" %>
 <%@ page import="com.example.evaluation3.data.model.enums.Movement" %>
-<%@ page import="com.example.evaluation3.data.model.entities.Specie" %><%--
+<%@ page import="com.example.evaluation3.data.model.entities.Specie" %>
+<%@ page import="com.example.evaluation3.control.servlet.base.CrudServlet" %><%--
   Created by IntelliJ IDEA.
   User: diegosantos
   Date: 14/07/22
@@ -60,7 +61,7 @@
         }
     %>
     <br>
-    <input type="submit" value="edit" name="edit">
+    <input type="submit" value="<%=CrudServlet.edit%>" name="edit">
 </form>
 </body>
 </html>

@@ -7,20 +7,21 @@ import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 
 abstract class CrudServlet<E: BaseEntity> : BaseServlet() {
-    protected open val register = "register"
-    protected open val view = "view"
-    protected open val edit = "edit"
-    protected open val goToEdit = "goToEdit"
-    protected open val delete = "delete"
-    protected open val list = "list"
+    companion object {
+        const val register = "register"
+        const val list = "list"
+        const val edit = "edit"
+        const val goToEdit = "goToEdit"
+        const val delete = "delete"
+    }
 
     abstract val transform: Transform<E>
     abstract val dao: Dao<E>
-
     abstract val path: String
 
     override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
         if (request.hasParameter(register)) {
+            handleGetRegisterRequest(request, response)
             servletContext.getRequestDispatcher("/$path/register.jsp").forward(request, response)
         } else if (request.hasParameter(list)) {
             request.setAttribute("entities", dao.getEntities())
@@ -36,6 +37,7 @@ abstract class CrudServlet<E: BaseEntity> : BaseServlet() {
                 dao.deleteBydId(it.toLong())
             }
         } else if (request.hasParameter(goToEdit)) {
+            handlePostGoToEditRequest(request, response)
             request.getParameter("id")?.let {
                 request.setAttribute("entity", dao.getBydId(it.toLong()))
                 servletContext.getRequestDispatcher("/$path/edit.jsp").forward(request, response)
@@ -43,5 +45,11 @@ abstract class CrudServlet<E: BaseEntity> : BaseServlet() {
         } else if (request.hasParameter(edit)) {
             dao.update(transform.fromRequest(request))
         }
+    }
+
+    protected open fun handleGetRegisterRequest(request: HttpServletRequest, response: HttpServletResponse) {
+    }
+
+    protected open fun handlePostGoToEditRequest(request: HttpServletRequest, response: HttpServletResponse) {
     }
 }

@@ -2,7 +2,8 @@
 <%@ page import="com.example.evaluation3.data.model.enums.Diet" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.example.evaluation3.data.model.enums.Movement" %>
-<%@ page import="com.example.evaluation3.control.servlet.base.CrudServlet" %><%--
+<%@ page import="com.example.evaluation3.control.servlet.base.CrudServlet" %>
+<%@ page import="com.example.evaluation3.data.model.entities.Specie" %><%--
   Created by IntelliJ IDEA.
   User: diegosantos
   Date: 13/07/22
@@ -12,36 +13,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Register Specie</title>
+    <title>Register Subspecie</title>
 </head>
 <body>
-<form action="specie" method="post">
+<form action="subspecies" method="post">
+    <h1>Register Subspecie</h1>
     Name: <input type="text" name="name">
     <br>
-    Diet:
-    <select name="diet">
+    Specie:
+    <select name="specie_id">
         <%
-            for (Diet diet : Diet.values()) {
+            ArrayList<Specie> species = (ArrayList<Specie>) request.getAttribute("species");
+            for(Specie specie : species) {
         %>
-        <option value="<%=diet.getDescription()%>"><%=diet.getDescription()%>
-        </option>
+        <option value="<%=specie.getId()%>"><%=specie.getName()%></option>
         <%
             }
         %>
     </select>
-    <br>
-    Movements:
-    <%
-        for (Movement movement : Movement.values()) {
-    %>
-    <label>
-        <input type="checkbox" name="movements" value="<%=movement%>">
-        <%=movement.getDescription()%>
-    </label>
-    <%
-        }
-    %>
-    <br>
     <input type="submit" value="<%=CrudServlet.register%>" name="register">
 </form>
 <a href="../index.jsp">Back to main section</a>
