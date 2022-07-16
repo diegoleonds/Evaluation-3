@@ -16,23 +16,24 @@
 <%
     ArrayList<Specie> species = (ArrayList<Specie>) request.getAttribute("entities");
 %>
-<form action="specie" method="post">
-    <table>
-        <thead>
-        <tr>
-            <th colspan="1">id</th>
-            <th colspan="1">name</th>
-            <th colspan="1">diet</th>
-            <th colspan="1">movements</th>
-        </tr>
-        </thead>
-        <tbody>
-        <%
-            for (Specie specie : species) {
-        %>
-        <tr>
+<table>
+    <thead>
+    <tr>
+        <th colspan="1">id</th>
+        <th colspan="1">name</th>
+        <th colspan="1">diet</th>
+        <th colspan="1">movements</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%
+        for (Specie specie : species) {
+    %>
+    <tr>
+        <form action="specie" method="post">
             <td>
-                <div><%=specie.getId()%></div>
+                <div><%=specie.getId()%>
+                </div>
                 <input type="text" name="id" hidden="hidden" value="<%=specie.getId()%>">
             </td>
             <td>
@@ -59,13 +60,13 @@
             <td>
                 <button type="submit" name="delete" value="delete"><img src="ic_delete.svg"></button>
             </td>
-        </tr>
-        <%
-            }
-        %>
-        </tbody>
-    </table>
-</form>
+        </form>
+    </tr>
+    <%
+        }
+    %>
+    </tbody>
+</table>
 <a href="../index.jsp">Back to main section</a>
 </body>
 </html>
