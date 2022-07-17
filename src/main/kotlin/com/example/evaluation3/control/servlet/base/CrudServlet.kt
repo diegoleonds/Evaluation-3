@@ -1,5 +1,6 @@
 package com.example.evaluation3.control.servlet.base
 
+import com.example.evaluation3.control.auth.Authenticator
 import com.example.evaluation3.control.transform.base.Transform
 import com.example.evaluation3.data.dao.base.Dao
 import com.example.evaluation3.data.model.base.BaseEntity
@@ -14,7 +15,7 @@ abstract class CrudServlet<E: BaseEntity> : BaseServlet() {
         const val goToEdit = "goToEdit"
         const val delete = "delete"
     }
-
+    val authenticator = Authenticator()
     abstract val transform: Transform<E>
     abstract val dao: Dao<E>
     abstract val path: String

@@ -9,4 +9,4 @@ private fun hashString(input: String, algorithm: String): String {
         .fold("") { str, it -> str + "%02x".format(it) }
 }
 
-fun String.sha256() = hashString(this, "SHA-256")
+fun String.toSha256() = hashString(this, "SHA-256")
