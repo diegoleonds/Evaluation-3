@@ -11,13 +11,12 @@ import jakarta.servlet.http.HttpServletResponse
 
 @WebServlet(name = "animal", value = ["/animal"])
 class AnimalServlet: CrudServlet<Animal>() {
-    override val transform = AnimalTransform()
-    override val dao = AnimalDao
-    override val path = "animal"
-
     companion object {
         const val subspecies = "subspecies"
     }
+    override val transform = AnimalTransform()
+    override val dao = AnimalDao
+    override val path = "animal"
 
     override fun handleGetRegisterRequest(request: HttpServletRequest, response: HttpServletResponse) {
         request.setAttribute(subspecies, SubSpecieDao.getEntities())
