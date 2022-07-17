@@ -3,6 +3,7 @@ package com.example.evaluation3.data.config
 import com.example.evaluation3.data.model.entities.Animal
 import com.example.evaluation3.data.model.entities.Specie
 import com.example.evaluation3.data.model.entities.SubSpecie
+import com.example.evaluation3.data.model.entities.User
 import org.hibernate.Session
 import org.hibernate.SessionFactory
 import org.hibernate.cfg.Configuration
@@ -40,6 +41,7 @@ object DbConfig {
                 .addAnnotatedClass(Specie::class.java)
                 .addAnnotatedClass(SubSpecie::class.java)
                 .addAnnotatedClass(Animal::class.java)
+                .addAnnotatedClass(User::class.java)
                 .buildSessionFactory()
         } catch (e: Throwable) {
             e.printStackTrace()

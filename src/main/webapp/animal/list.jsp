@@ -58,6 +58,6 @@
     %>
     </tbody>
 </table>
-<a href="../index.jsp">Back to main section</a>
+<a href="../menu.jsp">Back to main section</a>
 </body>
 </html>

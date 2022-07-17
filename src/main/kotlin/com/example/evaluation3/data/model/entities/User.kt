@@ -5,17 +5,18 @@ import com.example.evaluation3.data.model.enums.AccessLevel
 import jakarta.persistence.*
 
 @Entity
+@Table(name = "user")
 data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     override val id: Long = 0,
 
-    @Column(name = "name", nullable = false)
-    val name: String,
+    @Column(name = "username", nullable = false)
+    val username: String,
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "password", nullable = false)
     val password: String,
 
     @Column(name = "access_level", nullable = false)
-    val accessLevel: AccessLevel
+    val accessLevel: AccessLevel = AccessLevel.USER
 ): BaseEntity()
