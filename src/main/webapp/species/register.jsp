@@ -23,7 +23,7 @@
         <%
             for (Diet diet : Diet.values()) {
         %>
-        <option value="<%=diet.getDescription()%>"><%=diet.getDescription()%>
+        <option value="<%=diet%>"><%=diet.getDescription()%>
         </option>
         <%
             }

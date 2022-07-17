@@ -11,7 +11,7 @@ class SpecieTransform : Transform<Specie> {
     override fun fromRequest(request: HttpServletRequest): Specie {
         return Specie(
             id = request.getIdParameter(),
-            name = request.getParameter("name"),
+            name = request.getNameParameter(),
             diet = Diet.findByName(request.getParameter("diet")),
             movements = request.getParameterValues("movements").let { parameters ->
                 HashSet<Movement>().apply {

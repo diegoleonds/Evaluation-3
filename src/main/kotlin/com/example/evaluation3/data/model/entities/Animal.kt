@@ -5,7 +5,7 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "animal")
-class Animal(
+data class Animal(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     override val id: Long = 0,
@@ -14,5 +14,5 @@ class Animal(
     val name: String,
 
     @ManyToOne
-    val specie: SubSpecie
+    val subSpecie: SubSpecie
 ) : BaseEntity()

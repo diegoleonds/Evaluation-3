@@ -8,6 +8,6 @@ enum class Diet(
     OMNIVORE("omnivore");
 
     companion object : EnumHandler<Diet> {
-        override fun findByName(name: String) = values().find { it.name == name } ?: throw getEnumNotFoundException()
+        override fun findByName(name: String) = values().find { it.name == name } ?: throw getEnumNotFoundException(name)
     }
 }

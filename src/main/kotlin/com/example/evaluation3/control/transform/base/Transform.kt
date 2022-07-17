@@ -6,4 +6,5 @@ interface Transform<E> {
     fun fromRequest(request: HttpServletRequest): E
 
     fun HttpServletRequest.getIdParameter() = getParameter("id")?.toLong() ?: 0
+    fun HttpServletRequest.getNameParameter() = getParameter("name")
 }

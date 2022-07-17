@@ -9,7 +9,7 @@ class SubSpecieTransform : Transform<SubSpecie> {
     override fun fromRequest(request: HttpServletRequest): SubSpecie {
         return SubSpecie(
             id = request.getIdParameter(),
-            name = request.getParameter("name"),
+            name = request.getNameParameter(),
             specie = SpecieDao.getBydId(request.getParameter("specie_id")!!.toLong())
                 ?: throw Exception("Specie for subspecie not found")
         )

@@ -1,7 +1,4 @@
-<%@ page import="com.example.evaluation3.data.dao.SpecieDao" %>
-<%@ page import="com.example.evaluation3.data.model.enums.Diet" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.example.evaluation3.data.model.enums.Movement" %>
 <%@ page import="com.example.evaluation3.control.servlet.base.CrudServlet" %>
 <%@ page import="com.example.evaluation3.data.model.entities.Specie" %><%--
   Created by IntelliJ IDEA.

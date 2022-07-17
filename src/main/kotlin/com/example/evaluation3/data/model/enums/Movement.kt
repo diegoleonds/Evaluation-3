@@ -8,6 +8,6 @@ enum class Movement(
     SWIM("swim");
 
     companion object : EnumHandler<Movement> {
-        override fun findByName(name: String) = values().find { it.name == name } ?: throw getEnumNotFoundException()
+        override fun findByName(name: String) = values().find { it.name == name } ?: throw getEnumNotFoundException(name)
     }
 }
