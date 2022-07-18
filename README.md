@@ -12,7 +12,12 @@ Web application with CRUD operations by access level
 
 ## User functionalities :robot:
 
-Login and CRUD operations as described bellow
+Login, CRUD operations and access level verifications as described bellow
+
+### Login:
+
+- Login with username and password
+- If successful the browser will store a cookie to maintain the user logged
 
 ### CRUD operations:
 
