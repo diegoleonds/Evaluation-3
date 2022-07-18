@@ -6,9 +6,13 @@ Kotlin web application
 
 Web application with CRUD operations by access level
 
-### Database Schema:
+### UML:
 
-![MySQL_demo_physical_data_model-2022-07-03_00-30](https://user-images.githubusercontent.com/56542755/177023400-e839c0d5-42e2-45b6-9599-5a9b480b607a.png)
+- Data layer:
+
+![image](https://user-images.githubusercontent.com/56542755/179634488-053cb727-ef28-40b2-b50e-845a3f99b6c8.png)
+
+- Control layer:
 
 ## User functionalities :robot:
 
