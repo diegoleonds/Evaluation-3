@@ -4,7 +4,7 @@ Kotlin web application
 
 ## About this project :bulb:
 
-Web application with CRUD operations
+Web application with CRUD operations by access level
 
 ### Database Schema:
 
@@ -27,6 +27,11 @@ Login and CRUD operations as described bellow
 - Diet and movement
 
   - Read
+  
+### Access Level:
+
+- Admin: all operations in the system
+- User: only read operations
 
 ## Instructions :gear:
 
