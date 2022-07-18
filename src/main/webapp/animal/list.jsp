@@ -46,10 +46,10 @@
                 <%=entity.getSubSpecie().getName()%>
             </td>
             <td>
-                <button type="submit" name="goToEdit" value="<%=CrudServlet.goToEdit%>"><img src="ic_edit.svg"></button>
+                <button type="submit" name="goToEdit" value="<%=CrudServlet.goToEdit%>">edit</button>
             </td>
             <td>
-                <button type="submit" name="delete" value="<%=CrudServlet.delete%>"><img src="ic_delete.svg"></button>
+                <button type="submit" name="delete" value="<%=CrudServlet.delete%>">delete</button>
             </td>
         </form>
     </tr>

@@ -17,8 +17,15 @@ class LoginServlet : BaseServlet() {
         const val password = "password"
     }
 
-    override fun doGet(request: HttpServletRequest?, response: HttpServletResponse?) {
-        servletContext.getRequestDispatcher("/login.jsp").forward(request, response)
+    override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
+        request.handleLoginCookie(
+            onSuccess = {
+                servletContext.redirectToMenu(request, response)
+            },
+            onFailure = {
+                servletContext.getRequestDispatcher("/login.jsp").forward(request, response)
+            }
+        )
     }
 
     override fun doPost(request: HttpServletRequest, response: HttpServletResponse) {
@@ -28,12 +35,11 @@ class LoginServlet : BaseServlet() {
 
             if (usernameParam != null && passwordParam != null) {
                 val user = UserDao.getUser(usernameParam, passwordParam)
-
                 if (user != null) {
                     response.saveLoginCookie(user)
-                    servletContext.getRequestDispatcher("/menu.jsp").forward(request, response)
+                    servletContext.redirectToMenu(request, response)
                 } else {
-                    servletContext.getRequestDispatcher("/login.jsp").forward(request, response)
+                    servletContext.redirectToLogin(request, response)
                 }
             }
         }
