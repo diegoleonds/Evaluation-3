@@ -8,11 +8,7 @@ Web application with CRUD operations by access level
 
 ### UML:
 
-- Data layer:
-
-![image](https://user-images.githubusercontent.com/56542755/179634488-053cb727-ef28-40b2-b50e-845a3f99b6c8.png)
-
-- Control layer:
+![image](https://user-images.githubusercontent.com/56542755/179636950-8902959b-d2b9-4226-b7a2-525772242788.png)
 
 ## User functionalities :robot:
 
